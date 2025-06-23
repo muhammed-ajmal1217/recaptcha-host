@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
   <head>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
@@ -15,4 +15,43 @@
          data-theme="light">
     </div>
   </body>
+</html> -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: #ffffff;
+    }
+
+    .recaptcha-container {
+      transform: scale(1.3);
+      /* Adjust size: 1.0 is normal, increase to enlarge */
+      transform-origin: center;
+    }
+  </style>
+  <script>
+    function onSubmit(token) {
+      window.flutter_inappwebview.callHandler('recaptcha', token);
+    }
+  </script>
+</head>
+
+<body>
+  <div class="recaptcha-container">
+    <div class="g-recaptcha" data-sitekey="6LfemGorAAAAAN1iwO92MGcedeSWYYwiFJg9Y3xg" data-callback="onSubmit"
+      data-theme="light">
+    </div>
+  </div>
+</body>
+
 </html>
