@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script>
+      function onSubmit(token) {
+        window.flutter_inappwebview.callHandler('recaptcha', token);
+      }
+    </script>
+  </head>
+  <body>
+    <div class="g-recaptcha"
+         data-sitekey="6LfemGorAAAAAN1iwO92MGcedeSWYYwiFJg9Y3xg"
+         data-callback="onSubmit"
+         data-theme="light">
+    </div>
+  </body>
+</html>
